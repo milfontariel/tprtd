@@ -5,3 +5,24 @@
 body {
     background-color: #881166;
 }
+
+.rec.rec-arrow:hover{
+    background-color: #B31284 !important;
+    border-radius: 50%;
+    box-shadow: none !important;
+}
+
+.rec.rec-arrow:focus:enabled{
+    background-color: transparent;
+    box-shadow: none !important;
+}
+
+.rec.rec-arrow{
+    background-color: transparent;
+    color: #fff;
+    border-radius: 0;
+    box-shadow: none;
+}
+.rec.rec-arrow:disabled {
+    visibility: hidden;
+}
