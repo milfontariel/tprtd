@@ -33,7 +33,7 @@ export function ProvidersSelect() {
         return
     }
     function notIsMainProvider(element) {
-        if (mainProviders.includes(`${element.provider_id}`) || element.provider_id === "119") {
+        if (mainProviders.includes(`${element.provider_id}`) || element.provider_id === 119) {
             return
         }
         return element

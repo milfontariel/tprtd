@@ -12,7 +12,7 @@ export async function postSelectedProviders(selectedProviders) {
     return await axios.post(`${BASE_URL}/providers`, selectedProviders, {});
 }
 
-export async function getRecommendedMovies() {
-    const response = await axios.get(`${BASE_URL}/recommended`);
+export async function getRecommendedMovies(page) {
+    const response = await axios.get(`${BASE_URL}/recommended/${page}`);
     return response.data;
 }
