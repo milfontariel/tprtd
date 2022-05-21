@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export function ItemNavBar({ title, list, key_type, type_name }) {
+export function ItemNavBar({ title, list, key_type, type_name, setWatchProviderFilter, setGenreFilter }) {
     const [displayItems, setDisplayItems] = useState(false);
 
     if (list) {
@@ -14,7 +14,14 @@ export function ItemNavBar({ title, list, key_type, type_name }) {
                     <ul className="py-1 text-sm  text-gray-700 dark:text-gray-200">
                         {list.map(listItem => {
                             return (
-                                <li key={listItem[key_type]}>
+                                <li onClick={() => {
+                                    if (key_type === "provider_id") {
+                                        setWatchProviderFilter(listItem.provider_id);
+                                        setGenreFilter(null);
+                                    } else {
+                                        setGenreFilter(listItem.id);
+                                    }
+                                }} key={listItem[key_type]}>
                                     <a href="#" className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">
                                         {listItem[type_name]}
                                     </a>

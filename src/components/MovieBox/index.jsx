@@ -4,17 +4,17 @@ import styled from "styled-components";
 
 //IMAGEM DEVE VIR POR PROPS
 
-export function MovieBox({ movie }) {
+export function MovieBox({ handleShowModal, movie }) {
     const [isBookmarked, setIsBookmarked] = useState(false);
     function handleBookmark() {
         //SALVAR COMO FAVORITO AQUI
         setIsBookmarked(!isBookmarked)
     }
     return (
-        <Container title={movie.title} poster={movie.poster_path} className={`group-custom hover:cursor-pointer rounded-xl select-none bg-cover hover:shadow-xl`}>
+        <Container title={movie.title} poster={movie.poster_path} className={`group-custom hover:cursor-pointer hover:scale-105 transition-all duration-200 ease-linear rounded-xl select-none bg-cover hover:shadow-xl`}>
             <div className="flex flex-col justify-end py-6 px-5 w-full h-full rounded-xl group-custom-hover:bg-gradient-to-t from-black transition-all duration-500 ease-linear ">
                 <div className="flex gap-5 justify-center items-center w-full h-full  opacity-0 group-custom-hover:opacity-100 transition-all duration-300 ease-linear">
-                    <Info alt="Informações" className="opacity-70 hover:opacity-100 transition-opacity duration-75 ease-linear" size={32} />
+                    <Info onClick={() => handleShowModal(movie.id)} alt="Informações" className="opacity-70 hover:opacity-100 transition-opacity duration-75 ease-linear" size={32} />
                     <div className="group-1 relative" onClick={handleBookmark}>
                         <BookmarkSimple alt="Adicionar à Minha Lista" className={`${isBookmarked ? 'hidden' : 'block'} opacity-70`} size={32} />
                         <BookmarkSimple alt="Adicionar à Minha Lista" className={`absolute top-0 opacity-0 group-1-hover:opacity-80`} size={32} weight="duotone" />
