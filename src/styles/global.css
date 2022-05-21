@@ -2,8 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
-    background-color: #881166;
+    /* background-color: #881166; */
+    background-image: linear-gradient(to top, #881166 50%, transparent 90%),
+                        url('http://image.tmdb.org/t/p/original/AdyJH8kDm8xT8IKTlgpEC15ny4u.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%, cover;
+    background-attachment: fixed;
+    background-position: center bottom;
 }
 
 .glassmorphism {

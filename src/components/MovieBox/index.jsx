@@ -11,7 +11,7 @@ export function MovieBox({ handleShowModal, movie }) {
         setIsBookmarked(!isBookmarked)
     }
     return (
-        <Container title={movie.title} poster={movie.poster_path} className={`group-custom hover:cursor-pointer hover:scale-105 transition-all duration-200 ease-linear rounded-xl select-none bg-cover hover:shadow-xl`}>
+        <Container title={movie.title} poster={movie.poster_path} className={`group-custom hover:cursor-pointer hover:scale-110 transition-all duration-200 ease-linear rounded-xl select-none bg-cover hover:shadow-xl`}>
             <div className="flex flex-col justify-end py-6 px-5 w-full h-full rounded-xl group-custom-hover:bg-gradient-to-t from-black transition-all duration-500 ease-linear ">
                 <div className="flex gap-5 justify-center items-center w-full h-full  opacity-0 group-custom-hover:opacity-100 transition-all duration-300 ease-linear">
                     <Info onClick={() => handleShowModal(movie.id)} alt="Informações" className="opacity-70 hover:opacity-100 transition-opacity duration-75 ease-linear" size={32} />

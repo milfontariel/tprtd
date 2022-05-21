@@ -6,6 +6,7 @@ import { MoviesContainer } from "../components/MoviesContainer";
 import { NavBar } from "../components/NavBar";
 import { Pagination } from "../components/Pagination";
 import { PaginationTop } from "../components/PaginationTop";
+import { SectionTitle } from "../components/SectionTitle";
 import * as api from "../services/api";
 
 export function Main() {
@@ -20,8 +21,7 @@ export function Main() {
     useEffect(() => {
         async function fetchRecommendedMovies(page, genreFilter, watchProviderFilter) {
             try {
-                const response = await api.getRecommendedMovies(page, genreFilter, watchProviderFilter);
-                console.log(response)
+                const response = await api.getRecommendedMovies(page, genreFilter?.id, watchProviderFilter?.provider_id);
                 setRecommendedMovies(response.results);
                 setCountPage(response.total_pages);
             } catch (error) {
@@ -36,9 +36,19 @@ export function Main() {
 
     }, [currentPage, watchProviderFilter, genreFilter]);
 
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [genreFilter, watchProviderFilter])
+
     function handleShowModal(movieId) {
         setModalIsOpen(!modalIsOpen);
         setMovieIdToInfo(movieId);
+    }
+
+    function clearFilters() {
+        setGenreFilter(null);
+        setWatchProviderFilter(null);
+        setCurrentPage(1)
     }
 
     return (
@@ -46,11 +56,8 @@ export function Main() {
             <div className="w-full min-h-screen">
                 {modalIsOpen && <MovieModal movieId={movieIdToInfo} modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />}
                 <Logo></Logo>
-                <NavBar setWatchProviderFilter={setWatchProviderFilter} setGenreFilter={setGenreFilter}></NavBar>
-                <div className="flex justify-center items-center flex-col">
-                    <p className="text-white font-bold text-2xl">Recomendados</p>
-                    <div className="border-b my-4 border-black border-opacity-30 w-full"></div>
-                </div>
+                <NavBar clearFilters={clearFilters} setWatchProviderFilter={setWatchProviderFilter} genreFilter={genreFilter} watchProviderFilter={watchProviderFilter} setGenreFilter={setGenreFilter}></NavBar>
+                <SectionTitle genre={genreFilter} provider={watchProviderFilter} title={'Recomendados'} />
                 <PaginationTop currentPage={currentPage} setCurrentPage={setCurrentPage} countPage={countPage} />
                 <MoviesContainer handleShowModal={handleShowModal} movieList={recommendedMovies}></MoviesContainer>
                 <Pagination currentPage={currentPage} setCurrentPage={setCurrentPage} countPage={countPage} />

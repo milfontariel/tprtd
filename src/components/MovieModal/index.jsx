@@ -25,7 +25,6 @@ export function MovieModal({ movieId, modalIsOpen, setModalIsOpen }) {
 
     return (
         <div onClick={() => setModalIsOpen(false)} className={`flex ${modalIsOpen ? "block" : "hidden"} justify-center items-center glassmorphism w-screen h-screen fixed z-50 top-0 left-0`}>
-            {console.log(movieDetails)}
             {!movieDetails ? <p className="text-white">loading</p> :
                 <div className="w-[80%] h-[90vh] max-w-3xl p-6 glassmorphism grid grid-cols-2 gap-2  md:grid-cols-5 grid-rows-3">
                     <div id="first-row" className="">
@@ -36,7 +35,7 @@ export function MovieModal({ movieId, modalIsOpen, setModalIsOpen }) {
                     <div id="second-row" className="col-start-2 col-end-6">
                         <div className="flex flex-col gap-1">
                             <p className="text-white font-bold text-2xl">{movieDetails.title}</p>
-                            <p className="text-white font-extralight text-md">Lançamento: {movieDetails.release_date.split('-')[0]}</p>
+                            <p className="text-white font-light text-md">Lançamento: {movieDetails.release_date.split('-')[0]}</p>
                             <p className="text-white font-medium text-md">TMDB: <span className="text-lg">{movieDetails.vote_average}</span></p>
                             <p className="text-white font-medium text-md">IMDB: <span className="text-lg">{imdbAverage}</span></p>
                             <div className="mt-3">
@@ -49,8 +48,8 @@ export function MovieModal({ movieId, modalIsOpen, setModalIsOpen }) {
                         </div>
                     </div>
                     <div id="third-row" className="col-start-1 col-end-6 pt-7 row-start-2 row-end-3">
-                        <p className="text-white font-medium">Sinopse:</p>
-                        <p className="text-white font-thin">"{movieDetails.overview}"</p>
+                        <p className="text-white font-semibold">Sinopse:</p>
+                        <p className="text-white font-light">"{movieDetails.overview}"</p>
                     </div>
                 </div>
             }

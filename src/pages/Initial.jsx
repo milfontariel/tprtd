@@ -22,7 +22,7 @@ export function Initial() {
 
     return (
         <div className="flex flex-col h-screen justify-center gap-8">
-            <Text size={"24"}>Olá, seja bem-vindo!</Text>
+            <Text className="" size={"24"}>Olá, seja bem-vindo!</Text>
             <Text>Por favor, selecione os serviços atualmente assinados por você:</Text>
             <ProvidersSelect></ProvidersSelect>
             <CTA_Button sendProviders={sendProviders}>Continuar</CTA_Button>
@@ -38,4 +38,5 @@ const Text = styled.p`
     text-align: center;
     max-width: 500px;
     padding: 0 2rem;
+    font-weight: bold;
 `
