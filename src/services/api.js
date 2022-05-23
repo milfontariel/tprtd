@@ -1,7 +1,7 @@
 import axios from "axios";
 axios.defaults.withCredentials = true;
 
-const BASE_URL = "http://localhost:5000";
+const { VITE_BASE_URL } = import.meta.env;
 
 export async function getProviders() {
     const response = await axios.get(`${BASE_URL}/providers`);

@@ -4,6 +4,23 @@ import { useState } from "react"
 export function ItemNavBar({ handleFunction, title, list, key_type, type_name, setWatchProviderFilter, setGenreFilter, watchProviderFilter, genreFilter }) {
     const [displayItems, setDisplayItems] = useState(false);
 
+    const listOrdered = list;
+
+    if (key_type === "provider_id") {
+        listOrdered.sort((x, y) => {
+            let a = x.provider_name.toUpperCase();
+            let b = y.provider_name.toUpperCase();
+            return a === b ? 0 : a > b ? 1 : -1;
+        });
+    } else if (key_type === "name") {
+        listOrdered.sort((x, y) => {
+            let a = x.name.toUpperCase();
+            let b = y.name.toUpperCase();
+            return a === b ? 0 : a > b ? 1 : -1;
+        });
+    }
+
+
     if (list) {
         return (
             <li>

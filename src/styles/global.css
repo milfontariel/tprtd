@@ -9,7 +9,7 @@ html {
 body {
     /* background-color: #881166; */
     background-image: linear-gradient(to top, #881166 50%, transparent 90%),
-                        url('http://image.tmdb.org/t/p/original/AdyJH8kDm8xT8IKTlgpEC15ny4u.jpg');
+                        url('http://image.tmdb.org/t/p/w1280/AdyJH8kDm8xT8IKTlgpEC15ny4u.jpg');
     background-repeat: no-repeat;
     background-size: 100% 100%, cover;
     background-attachment: fixed;
@@ -17,11 +17,11 @@ body {
 }
 
 .glassmorphism {
-    background: rgba( 0, 0, 0, 0.35 );
-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
-backdrop-filter: blur( 11px );
--webkit-backdrop-filter: blur( 11px );
-border-radius: 10px;
+    background: rgba( 0, 0, 0, 0.5 );
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur( 3px );
+    -webkit-backdrop-filter: blur( 3px );
+    border-radius: 10px;
 }
 
 .rec.rec-arrow:hover{

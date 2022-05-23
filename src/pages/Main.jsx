@@ -17,13 +17,15 @@ export function Main() {
     const [movieIdToInfo, setMovieIdToInfo] = useState(null);
     const [genreFilter, setGenreFilter] = useState(null);
     const [watchProviderFilter, setWatchProviderFilter] = useState(null);
+    const [personalProviders, setPersonalProviders] = useState(null);
 
     useEffect(() => {
         async function fetchRecommendedMovies(page, genreFilter, watchProviderFilter) {
             try {
                 const response = await api.getRecommendedMovies(page, genreFilter?.id, watchProviderFilter?.provider_id);
-                setRecommendedMovies(response.results);
-                setCountPage(response.total_pages);
+                setRecommendedMovies(response.data.results);
+                setPersonalProviders(response.providers.replace(/"/g, '').split('|'));
+                setCountPage(response.data.total_pages);
             } catch (error) {
                 console.log(error);
             }
@@ -54,7 +56,7 @@ export function Main() {
     return (
         <div className="min-h-screen my-0 mx-auto w-full md:w-4/5 px-0 pt-2 pb-48 md:px-1">
             <div className="w-full min-h-screen">
-                {modalIsOpen && <MovieModal movieId={movieIdToInfo} modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />}
+                {modalIsOpen && <MovieModal personalProviders={personalProviders} movieId={movieIdToInfo} modalIsOpen={modalIsOpen} setModalIsOpen={setModalIsOpen} />}
                 <Logo></Logo>
                 <NavBar clearFilters={clearFilters} setWatchProviderFilter={setWatchProviderFilter} genreFilter={genreFilter} watchProviderFilter={watchProviderFilter} setGenreFilter={setGenreFilter}></NavBar>
                 <SectionTitle genre={genreFilter} provider={watchProviderFilter} title={'Recomendados'} />

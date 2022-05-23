@@ -4,7 +4,7 @@ export function Pagination({ setCurrentPage, currentPage, countPage }) {
     const scrollToTop = () => {
         setTimeout(() => {
             window.scrollTo({
-                top: 0,
+                top: 400,
                 behavior: "smooth",
             });
         }, 500);
@@ -25,7 +25,7 @@ export function Pagination({ setCurrentPage, currentPage, countPage }) {
             <button onClick={() => {
                 setCurrentPage(currentPage + 1);
                 scrollToTop();
-            }} disabled={currentPage === countPage ? true : false} className="flex disabled:hover:bg-[#990F71] disabled:opacity-0 disabled:hover:text-opacity-50 shadow-sm hover:shadow-md items-center justify-center group bg-[#990F71] hover:bg-[#B31284] font-medium text-opacity-50 hover:text-opacity-100 pl-4 pr-1 py-1 rounded-full text-white transition-all duration-200 ease-linear">
+            }} disabled={currentPage === countPage || countPage === 0 ? true : false} className="flex disabled:hover:bg-[#990F71] disabled:opacity-0 disabled:hover:text-opacity-50 shadow-sm hover:shadow-md items-center justify-center group bg-[#990F71] hover:bg-[#B31284] font-medium text-opacity-50 hover:text-opacity-100 pl-4 pr-1 py-1 rounded-full text-white transition-all duration-200 ease-linear">
                 Próxima
                 <CaretRight size={28} weight="fill" />
             </button>

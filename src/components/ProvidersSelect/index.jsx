@@ -9,7 +9,7 @@ export function ProvidersSelect() {
 
     const [providers, setProviders] = useState([]);
     const mainProviders = [
-        "8", "9", "337", "619", "384", "307", "227"
+        "8", "119", "337", "619", "384", "307", "227"
     ]
 
     useEffect(() => {
