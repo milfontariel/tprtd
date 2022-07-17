@@ -51,9 +51,11 @@ Inicie o servidor
 
 ## Roadmap
 
-- Implementar lista do usuário
+- [x] Recomendar filmes
 
-- Inserir OAuth
+- [ ] Implementar lista pessoal do usuário
+
+- [ ] Inserir OAuth
 
 
 
