@@ -9,7 +9,7 @@ O TPRTD recomenda filmes disponíveis nos streamings que você já assina, ranke
 ## Demonstração
 [TPRTD Movies](https://tprtd.vercel.app)
 
-![TPRTD DEMO](https://lh5.googleusercontent.com/9Z0z9KACJf63upN4zywlDPhuEy4su0v4p1_HgyAXtp4-VR1X8TgmSpz5XTtr2qv-qprfKnD8Yuz0mLGYtlPL=w1868-h893-rw)
+![TPRTD DEMO](./src/assets/tprtd.gif)
 
 ## Variáveis de Ambiente
 
