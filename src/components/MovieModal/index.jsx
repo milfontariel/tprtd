@@ -48,7 +48,7 @@ export function MovieModal({ movieId, modalIsOpen, setModalIsOpen, personalProvi
                         <div>
                             <div className="flex gap-2 items-center">
                                 <div title="Nota no TMDb" className="select-none flex justify-center items-center border-4 box-content border-[#B31284] text-white w-8 h-8 rounded-full bg-[#881166] font-bold p-0.5">
-                                    {movieDetails.vote_average}
+                                    {movieDetails.vote_average.toFixed(1)}
                                 </div>
                                 <div className="group-1 relative text-white hover:cursor-pointer" onClick={handleBookmark}>
                                     <BookmarkSimple alt="Adicionar à Minha Lista" className={`${isBookmarked ? 'hidden' : 'block'} opacity-70`} size={32} />
