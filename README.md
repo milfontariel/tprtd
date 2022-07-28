@@ -65,11 +65,6 @@ Inicie o servidor
 
 **Back-end:** Node, Express
 
-## Cores
-
-| Cor               | Hexadecimal                                                |
-| ----------------- | ---------------------------------------------------------------- |
-| Primária      | ![#881166](https://via.placeholder.com/10/881166?text=+) #881166 |
 
 
 ## Autores
